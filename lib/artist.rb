@@ -14,7 +14,14 @@ class Artist
     song  
   end 
   
-  def self.song_count 
-    @@song_count 
+ def save
+   @@all << self
+   self 
   end 
+  
+  def self.all 
+    @@all 
+  end 
+  
+  def self.find_or_creat_by_name(name)
 end 
