@@ -1,9 +1,11 @@
 class mp3_importer
-  attr_reader :patch, :files
+  attr_reader :path 
   
   def initialize(path)
     @path = path 
-    @files = Dir.entries(path).grep(/.*\.mp3/)
+  end 
+  def files
+    Dir[@path+"/*.mp3"].map { |file| file.split("/").last }
 end 
 
 def import 
